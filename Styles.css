@@ -1,0 +1,175 @@
+/* Define el estilo básico para toda la página */
+body {
+    font-family: Arial, sans-serif; /* Fuente y tipo de letra */
+    margin: 0; /* Sin márgenes */
+    padding: 0; /* Sin relleno */
+    background-color: #000000; /* Fondo negro */
+}
+
+/* Estilos para la sección principal */
+main {
+    display: grid; /* Layout de cuadrícula */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    gap: 20px; /* Espacio entre elementos */
+    padding: 20px; /* Relleno alrededor */
+}
+
+/* Estilos para imágenes en secciones 'evento' */
+#evento img,
+section#evento img {
+    max-width: 70%; /* Ancho máximo del 70% */
+    height: auto; /* Altura ajustable */
+    display: block; /* Bloque para centrar */
+    margin-left: auto; /* Centrado horizontal */
+    margin-right: auto; /* Centrado horizontal */
+}
+
+/* Estilos para secciones 'evento', formularios y 'detalles-compra' */
+section#evento,
+form,
+section#detalles-compra {
+    grid-column: span 1; /* Ocupa una columna */
+    border: 1px solid #5f0000; /* Borde rojo oscuro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Relleno alrededor */
+}
+
+/* Estilos para 'detalles-compra' específicamente */
+section#detalles-compra {
+    display: block !important; /* Forzar bloque */
+    width: 85%; /* Ancho del 85% */
+}
+
+/* Estilos para formularios */
+form {
+    width: 100%; /* Ancho completo */
+    max-width: 400px; /* Máximo de 400px */
+    padding: 20px; /* Relleno alrededor */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos para etiquetas, entradas, selectores y botones */
+label,
+input,
+select,
+button {
+    display: block; /* Bloques */
+    margin-bottom: 10px; /* Margen inferior */
+    width: 100%; /* Ancho completo */
+}
+
+/* Estilos para botones */
+button {
+    background-color: #490000; /* Fondo rojo oscuro */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px; /* Relleno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    margin-top: 50px; /* Margen superior */
+}
+
+/* Estilos al pasar el cursor por encima del botón */
+button:hover {
+    background-color: #000000; /* Fondo negro */
+}
+
+/* Animación de corazones flotantes */
+.corazones {
+    position: fixed; /* Posición fija */
+    top: 0; /* Arriba */
+    left: 0; /* Izquierda */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    pointer-events: none; /* No permite eventos de puntero */
+    z-index: 1000; /* Capa superior */
+}
+
+/* Estilos para corazones en la animación */
+.corazones span {
+    font-size: 35px; /* Tamaño de fuente */
+    position: absolute; /* Posición absoluta */
+    top: 100%; /* Abajo */
+    animation: flotar 5s linear infinite; /* Animación de flotar */
+    color: #570000; /* Color del texto */
+}
+
+/* Animación de flotar para los corazones */
+@keyframes flotar {
+    0% {
+        transform: translateY(0) scale(1); /* Inicio */
+        opacity: 1; /* Totalmente visible */
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5); /* Final */
+        opacity: 0; /* Totalmente transparente */
+    }
+}
+
+/* Estilos adicionales para diferentes dispositivos */
+
+/* Estilos para dispositivos de escritorio */
+@media only screen and (min-width: 768px) {
+    /* Estilos específicos para la cuadrícula principal */
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+
+    /* Estilos para secciones, formularios y 'detalles-compra' en escritorio */
+    section#evento,
+    form,
+    section#detalles-compra {
+        grid-column: span 1;
+    }
+
+    /* Estilos para formularios en escritorio */
+    form {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    /* Estilos para secciones, formularios y 'detalles-compra' en escritorio */
+    section#evento,
+    form,
+    section#detalles-compra {
+        border: 1px solid #5f0000;
+        border-radius: 10px;
+        padding: 14px;
+    }
+}
+
+/* Estilos para dispositivos móviles */
+@media only screen and (max-width: 767px) {
+    /* Estilos específicos para la cuadrícula en móviles */
+    main {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Estilos para secciones, formularios y 'detalles-compra' en móviles */
+    section#evento,
+    form,
+    section#detalles-compra {
+        width: calc(100% - 40px);
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+    }
+}
+
+/* Estilos de fondo para secciones, formularios y 'detalles-compra' */
+section#evento,
+form,
+section#detalles-compra {
+    background-image: url('fondo.jpg'); /* Fondo de imagen */
+    background-size: cover; /* Cubrir todo el contenedor */
+}
